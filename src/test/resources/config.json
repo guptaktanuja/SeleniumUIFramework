@@ -1,0 +1,11 @@
+{
+  "env": "qa",
+  "browser": "chrome",
+  "headless": "false",
+
+  "urls": {
+    "qa": "https://www.saucedemo.com/",
+    "staging": "https://staging.myapp.com",
+    "prod": "https://myapp.com"
+  }
+}

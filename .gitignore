@@ -1,0 +1,62 @@
+# =========================
+# Maven build output
+# =========================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# =========================
+# IDEs
+# =========================
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# VS Code
+.vscode/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs & compiled files
+# =========================
+*.log
+*.class
+
+# =========================
+# TestNG / Reports
+# =========================
+test-output/
+reports/
+extent-output/
+allure-results/
+allure-report/
+
+# =========================
+# Temporary folders
+# =========================
+tmp/
+*.tmp
+
+# =========================
+# Drivers (optional)
+# Uncomment if you DON'T want to push drivers
+# drivers/
