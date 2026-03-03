@@ -21,8 +21,19 @@ public final class Waits {
         );
     }
 
+    private static WebDriverWait webDriverWait(Duration timeout) {
+        return new WebDriverWait(
+                DriverManager.getDriver(),
+               timeout);
+    }
+
+
     public static WebElement waitForClickable(WebElement element) {
-        return webDriverWait().until(ExpectedConditions.elementToBeClickable(element));
+            return webDriverWait().until(ExpectedConditions.elementToBeClickable(element));
+        }
+
+    public static WebElement waitForClickable(WebElement element,Duration timeout) {
+        return webDriverWait(timeout).until(ExpectedConditions.elementToBeClickable(element));
     }
 
     public static WebElement waitForVisible(WebElement element) {

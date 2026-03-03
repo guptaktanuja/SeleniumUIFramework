@@ -7,14 +7,14 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import utils.ConfigReader;
+//import utils.ConfigReader;
 import utils.JsonConfigReader;
 
 public class DriverFactory {
 
     public static WebDriver initDriver() {
 
-        ConfigReader config = new ConfigReader();
+      //  ConfigReader config = new ConfigReader();
         // String browser = config.getProperty("browser");
         String browser = JsonConfigReader.getBrowser();
 

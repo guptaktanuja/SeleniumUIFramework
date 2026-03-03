@@ -15,6 +15,8 @@ import utils.CustomExceptions;
 import java.time.Duration;
 import java.util.Set;
 
+import static utils.Waits.webDriverWait;
+
 public class BasePage {
 
     protected WebDriver driver;
@@ -56,8 +58,23 @@ public class BasePage {
         }
     }
 
+    protected void click(WebElement element,Duration timeout) {
 
-    protected String getText(WebElement element) {
+        try {
+            Waits.waitForClickable(element,timeout).click();
+        } catch (TimeoutException | ElementClickInterceptedException e) {
+
+            throw new RuntimeException("CLICK failed: element not clickable -> " + element, e);
+
+            // throw new CustomExceptions.ElementNotClickableException("CLICK failed: element not clickable -> " + element,e);
+        } catch (StaleElementReferenceException e) {
+            throw new CustomExceptions.ElementNotClickableException("CLICK failed: element became stale -> " + element,e);
+        }
+    }
+
+
+
+     protected String getText(WebElement element) {
         return Waits.waitForVisible(element).getText();
     }
 

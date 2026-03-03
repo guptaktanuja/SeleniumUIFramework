@@ -8,7 +8,7 @@ import pages.InventoryPage;
 import pages.LoginPage;
 import utils.ExcelUtil;
 
-public class LoginTest extends BaseTest {
+public class    LoginTest extends BaseTest {
 
      @Test
     public void loginValidUser_UI01() {

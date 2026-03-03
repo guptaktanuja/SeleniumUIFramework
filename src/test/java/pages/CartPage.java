@@ -18,23 +18,23 @@ public class CartPage extends BasePage {
     private List<WebElement> cartItems;
 
 
-
     // Directly list all product names in cart
     @FindBy(css = ".cart_item .inventory_item_name")
     private List<WebElement> cartItemNames;
-
 
 
     public boolean isAt() {
         return "Your Cart".equals(getText(yourCartHeader));
     }
 
-    /** Read all product names present in cart */
+    /**
+     * Read all product names present in cart
+     */
 
     public List<String> getCartProductNames() {
         return cartItemNames.stream()
                 .map(this::getText)
-                .collect(Collectors.toList());
-    }
+                .toList();
 
+    }
 }

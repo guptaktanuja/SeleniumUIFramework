@@ -8,9 +8,10 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utils.*;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.Listeners;
 
 import java.lang.reflect.Method;
-
+@Listeners({ utils.RetryTransformer.class, utils.TestListener.class })
 public class BaseTest {
 
     protected Logger logger = Log.getLogger(this.getClass());
@@ -100,7 +101,8 @@ public class BaseTest {
             }
 
         } finally {
-            if (driver != null) driver.quit();
+            if (driver != null)
+                driver.quit();
             DriverManager.unload();
             ExtentTestManager.unload();
         }
